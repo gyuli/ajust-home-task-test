@@ -2,8 +2,11 @@
 Test for AjustHomeTask
 
 reqired packages:
+
 pip install uvicorn
+
 pip install fastapi
+
 pip install sqlalchemy
 
 Python 3.7 and higher required.
