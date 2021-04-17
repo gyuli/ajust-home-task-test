@@ -106,14 +106,10 @@ async def get_analitics(query_data) -> list:
     for column in order_by_list:
         sort_func = desc if '-' in column or 'desc' in column else asc
         column = column.replace('+', '').replace('asc', '').replace('-', '').replace('desc', '').replace(' ', '')
-        # if column == 'cpi':
         for i in range(len(sel_col_list)):
             if sel_col_list[i].name == column:
                 ord_col_list.append(sort_func(text(f'{i + 1}')))
                 break
-        # else:
-        #     c = tables_fields[column]
-        #     ord_col_list.append(sort_func(c))
 
     # forming tables joining for sql-generating
     join_obj = performance_metrics_table.\
